@@ -1,0 +1,3 @@
+schematics oopslog-p1.sch oopslog-p2.sch
+elements-dir ~/geda/elements
+output-name oopslog
