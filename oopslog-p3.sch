@@ -164,7 +164,7 @@ device=74164
 T 44900 50240 5 10 0 0 0 0 1
 footprint=SO14
 T 46300 50100 5 10 1 1 0 6 1
-refdes=U5
+refdes=U6
 T 44900 51700 5 10 0 0 0 0 1
 net=+3.3V:14
 }
@@ -332,7 +332,7 @@ device=74164
 T 44900 46240 5 10 0 0 0 0 1
 footprint=SO14
 T 46300 46100 5 10 1 1 0 6 1
-refdes=U6
+refdes=U7
 T 44600 42700 5 10 0 0 0 0 1
 net=+3.3V:14
 }
@@ -492,7 +492,7 @@ netname=memchipenn
 C 51200 42200 1 0 0 cy7c1399.sym
 {
 T 51600 50200 5 10 1 1 0 0 1
-refdes=U7
+refdes=U8
 T 44800 47000 5 10 0 0 0 0 1
 footprint=SO28
 T 44800 47200 5 10 0 0 0 0 1
