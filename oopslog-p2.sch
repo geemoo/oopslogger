@@ -659,12 +659,12 @@ N 48600 49600 51000 49600 4
 N 53400 48600 55600 48600 4
 {
 T 55700 48600 5 10 1 1 0 1 1
-netname=D3
+netname=D7
 }
 N 53400 48300 55600 48300 4
 {
 T 55700 48300 5 10 1 1 0 1 1
-netname=D4
+netname=D6
 }
 N 53400 48000 55600 48000 4
 {
@@ -674,12 +674,12 @@ netname=D5
 N 53400 47700 55600 47700 4
 {
 T 55700 47700 5 10 1 1 0 1 1
-netname=D6
+netname=D4
 }
 N 53400 44500 55000 44500 4
 {
 T 55100 44500 5 10 1 1 0 1 1
-netname=memdata
+netname=memoutn
 }
 N 53400 46500 55600 46500 4
 {
@@ -699,35 +699,35 @@ netname=D0
 N 53400 45600 55600 45600 4
 {
 T 55700 45600 5 10 1 1 0 1 1
-netname=D7
+netname=D3
 }
 N 55800 46800 56500 46800 4
 N 56500 46800 56500 46600 4
 N 53400 43300 55000 43300 4
 {
 T 55100 43300 5 10 1 1 0 1 1
-netname=memoutn
+netname=memshiftenn
 }
 N 53400 43000 55000 43000 4
 {
 T 55100 43000 5 10 1 1 0 1 1
-netname=memchipenn
+netname=memwriten
 }
 N 53400 42700 55000 42700 4
 {
 T 55100 42700 5 10 1 1 0 1 1
-netname=memshiftenn
+netname=memclk
 }
 N 53400 43600 55000 43600 4
 {
 T 55100 43600 5 10 1 1 0 1 1
-netname=memwriten
+netname=memdata
 }
 N 53400 46800 53700 46800 4
 N 53400 44800 55000 44800 4
 {
 T 55100 44800 5 10 1 1 0 1 1
-netname=memclk
+netname=memchipenn
 }
 C 52500 49400 1 0 0 capacitor-1.sym
 {
