@@ -1,13 +1,5 @@
 v 20080127 1
-B 300 0 1900 2000 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
-{
-T 300 2700 5 10 0 0 0 0 1
-device=AT46F004
-T 300 2500 5 10 0 0 0 0 1
-footprint=8SOIC
-T 300 2300 5 10 0 0 0 0 1
-description=Atmel Flash chip
-}
+B 300 0 1900 2100 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
 P 0 1600 300 1600 1 0 0
 {
 T 0 1600 5 10 0 0 0 6 1
@@ -24,7 +16,7 @@ P 0 1200 300 1200 1 0 0
 T 0 1200 5 10 0 0 0 6 1
 pintype=io
 T 355 1195 9 10 1 1 0 0 1
-pinlabel=HOLDn
+pinlabel=\_HOLD\_
 T 205 1245 5 8 1 1 0 6 1
 pinnumber=7
 T 0 1200 5 10 0 0 0 6 1
@@ -57,7 +49,7 @@ P 2500 400 2200 400 1 0 0
 T 2500 400 5 10 0 0 0 6 1
 pintype=io
 T 2145 395 9 10 1 1 0 6 1
-pinlabel=CSn
+pinlabel=\_CS\_
 T 2295 445 5 8 1 1 0 0 1
 pinnumber=1
 T 2500 400 5 10 0 0 0 6 1
@@ -77,9 +69,9 @@ pinseq=2
 P 0 800 300 800 1 0 0
 {
 T 0 800 5 10 0 0 0 0 1
-pintype=IO
+pintype=io
 T 355 795 9 10 1 1 0 1 1
-pinlabel=WPn
+pinlabel=\_WP\_
 T 205 845 5 8 1 1 0 6 1
 pinnumber=3
 T 0 800 5 10 0 0 0 0 1
@@ -96,7 +88,15 @@ pinnumber=4
 T 0 400 5 10 0 0 0 0 1
 pinseq=4
 }
-T 800 1800 9 10 1 0 0 0 1
-AT46F004
-T 300 2100 8 10 1 1 0 0 1
+T 700 1900 9 10 1 0 0 0 1
+AT25DF041A
+T 300 2200 8 10 1 1 0 0 1
 refdes=U?
+T 300 2400 8 10 0 0 0 0 1
+device=AT25DF041A
+T 300 2800 8 10 0 0 0 0 1
+footprint=SO8
+T 300 2600 8 10 0 0 0 0 1
+description=Atmel 4Mbit SPI Flash
+T 300 3000 8 10 0 0 0 0 1
+numslots=0
