@@ -1,0 +1,57 @@
+v 20080127 1
+T 0 1400 8 10 1 1 0 0 1
+refdes=J?
+T -1100 800 8 10 0 0 0 0 1
+device=USBCONNECTOR
+T -1100 1000 8 10 0 0 0 0 1
+description=USB connector
+T -1100 1200 8 10 0 0 0 0 1
+numslots=0
+T -1100 1400 8 10 0 0 0 0 1
+footprint=ToBeDetermined
+P 900 1100 700 1100 1 0 0
+{
+T 800 1100 5 10 0 0 0 0 1
+pintype=pwr
+T 645 1095 5 8 1 1 0 7 1
+pinlabel=Vcc
+T 795 1145 5 8 1 1 0 3 1
+pinnumber=1
+T 800 1100 5 10 0 0 0 0 1
+pinseq=1
+}
+P 900 800 700 800 1 0 0
+{
+T 800 900 5 10 0 0 0 0 1
+pintype=io
+T 645 795 5 8 1 1 0 7 1
+pinlabel=D-
+T 795 845 5 8 1 1 0 3 1
+pinnumber=2
+T 800 900 5 10 0 0 0 0 1
+pinseq=2
+}
+P 900 500 700 500 1 0 0
+{
+T 800 700 5 10 0 0 0 0 1
+pintype=io
+T 645 495 5 8 1 1 0 7 1
+pinlabel=D+
+T 795 545 5 8 1 1 0 3 1
+pinnumber=3
+T 800 700 5 10 0 0 0 0 1
+pinseq=3
+}
+P 900 200 700 200 1 0 0
+{
+T 800 500 5 10 0 0 0 0 1
+pintype=pwr
+T 645 195 5 8 1 1 0 7 1
+pinlabel=Gnd
+T 795 245 5 8 1 1 0 3 1
+pinnumber=4
+T 800 500 5 10 0 0 0 0 1
+pinseq=4
+}
+B 0 0 700 1300 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+B 0 300 300 700 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
