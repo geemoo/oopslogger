@@ -5,7 +5,7 @@ P 0 1600 300 1600 1 0 0
 T 0 1600 5 10 0 0 0 6 1
 pintype=pwr
 T 355 1595 9 10 1 1 0 0 1
-pinlabel=VCC
+pinlabel=Vcc
 T 205 1645 5 8 1 1 0 6 1
 pinnumber=8
 T 0 1600 5 10 0 0 0 6 1
@@ -16,7 +16,7 @@ P 0 1200 300 1200 1 0 0
 T 0 1200 5 10 0 0 0 6 1
 pintype=io
 T 355 1195 9 10 1 1 0 0 1
-pinlabel=\_HOLD\_
+pinlabel=\_Hold\_
 T 205 1245 5 8 1 1 0 6 1
 pinnumber=7
 T 0 1200 5 10 0 0 0 6 1
@@ -82,7 +82,7 @@ P 0 400 300 400 1 0 0
 T 0 400 5 10 0 0 0 0 1
 pintype=pwr
 T 355 395 9 10 1 1 0 1 1
-pinlabel=GND
+pinlabel=Gnd
 T 205 445 5 8 1 1 0 6 1
 pinnumber=4
 T 0 400 5 10 0 0 0 0 1

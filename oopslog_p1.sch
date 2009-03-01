@@ -80,7 +80,7 @@ C 40600 41200 1 0 0 connector9-1.sym
 T 40700 44700 5 10 0 0 0 0 1
 device=DB9TB
 T 40700 44100 5 10 1 1 0 0 1
-refdes=J2M
+refdes=J?
 T 40600 41200 5 10 0 0 0 0 1
 value=9
 T 40600 41200 5 10 0 0 0 0 1
@@ -174,7 +174,7 @@ OOPS logger
 T 50500 40100 9 12 1 0 0 0 1
 1
 T 51800 40100 9 12 1 0 0 0 1
-3
+2
 T 54000 40100 9 12 1 0 0 0 1
 Jean Richard
 C 54100 48400 1 90 0 resistor-1.sym
@@ -278,7 +278,7 @@ refdes=J?
 T 39400 49800 5 10 0 0 0 0 1
 device=USBCONNECTOR
 T 39400 50400 5 10 0 0 0 0 1
-footprint=ToBeDetermined
+footprint=USB_TypeB_RA_TH
 }
 C 50300 48500 1 0 0 tps79333.sym
 {

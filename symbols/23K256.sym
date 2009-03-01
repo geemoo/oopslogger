@@ -37,7 +37,7 @@ P 0 400 300 400 1 0 0
 T 0 400 5 10 0 0 0 0 1
 pintype=pwr
 T 355 395 9 8 1 1 0 1 1
-pinlabel=Vss
+pinlabel=Gnd
 T 205 445 5 8 1 1 0 6 1
 pinnumber=4
 T 0 400 5 10 0 0 0 0 1
@@ -59,7 +59,7 @@ P 2300 1200 2000 1200 1 0 0
 T 2300 1000 5 10 0 0 0 0 1
 pintype=io
 T 1945 1195 9 8 1 1 0 7 1
-pinlabel=SClk
+pinlabel=SCK
 T 2095 1245 5 8 1 1 0 0 1
 pinnumber=6
 T 2300 1000 5 10 0 0 0 0 1
