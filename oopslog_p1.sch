@@ -80,7 +80,7 @@ C 40600 41200 1 0 0 connector9-1.sym
 T 40700 44700 5 10 0 0 0 0 1
 device=DB9TB
 T 40700 44100 5 10 1 1 0 0 1
-refdes=J?
+refdes=J1
 T 40600 41200 5 10 0 0 0 0 1
 value=9
 T 40600 41200 5 10 0 0 0 0 1
@@ -218,7 +218,7 @@ C 53100 49100 1 270 0 capacitor-polarized.sym
 T 53800 48900 5 10 0 0 270 0 1
 device=POLARIZED_CAPACITOR
 T 53200 48200 5 10 1 1 90 0 1
-refdes=C?
+refdes=C9
 T 54000 48900 5 10 0 0 270 0 1
 symversion=0.1
 T 53200 48800 5 10 1 1 90 0 1
@@ -274,7 +274,7 @@ N 45000 40500 45000 40800 4
 C 40500 49000 1 0 0 connector-usb.sym
 {
 T 40500 50400 5 10 1 1 0 0 1
-refdes=J?
+refdes=J2
 T 39400 49800 5 10 0 0 0 0 1
 device=USBCONNECTOR
 T 39400 50400 5 10 0 0 0 0 1
@@ -283,12 +283,12 @@ footprint=USB_TypeB_RA_TH
 C 50300 48500 1 0 0 tps79333.sym
 {
 T 50595 50095 5 10 1 1 0 1 1
-refdes=U?
+refdes=U1
 }
 C 43500 41600 1 0 0 max3232.sym
 {
 T 43900 45200 5 10 1 1 0 0 1
-refdes=U?
+refdes=U2
 }
 N 46500 43500 47200 43500 4
 {
@@ -301,7 +301,7 @@ C 48100 42000 1 270 0 capacitor-1.sym
 T 48800 41800 5 10 0 0 270 0 1
 device=CAPACITOR
 T 48100 41400 5 10 1 1 90 8 1
-refdes=C?
+refdes=C10
 T 49000 41800 5 10 0 0 270 0 1
 symversion=0.1
 T 48200 41700 5 10 1 1 90 0 1
@@ -327,7 +327,7 @@ C 52400 42700 1 0 0 connector6-1.sym
 T 54200 44500 5 10 0 0 0 0 1
 device=CONNECTOR_6
 T 52600 44700 5 10 1 1 180 8 1
-refdes=J?
+refdes=J3
 T 52400 42700 5 10 0 0 90 0 1
 footprint=HEADER6_2
 }
