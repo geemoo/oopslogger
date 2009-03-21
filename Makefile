@@ -50,7 +50,7 @@ drc: $(PAGES)
 #	gnetlist -g geda -o $(PROJNAME)_geda.net $(PAGES)
 
 genpcb: $(PAGES)
-	gsch2pcb -v $(PROJNAME).proj
+	gsch2pcb -v -d elements -o $(PROJNAME) $(PAGES)
 
 pcb:
 	pcb $(PROJNAME).pcb
@@ -58,7 +58,7 @@ pcb:
 #net-tango: $(PAGES)
 #	gnetlist -g tango -o $(PROJNAME)_tango.net $(PAGES)
 
-printpdf: $(PROJNAME).ps
+pdf: $(PROJNAME).ps
 	ps2pdf -dOptimize=true -dUseFlateCompression=true -sPAPERSIZE=a4 $< $(PROJNAME).pdf
 
 $(PROJNAME).ps: printps
@@ -68,7 +68,7 @@ printps: $(PAGES)
 	rm -f $(PROJNAME).ps
 	for S in $(PAGES); \
 	do \
-	gschem -q -o ONEPAGE.ps -s$(HOME)/geda/share/gEDA/scheme/print.scm $$S; \
+	gschem -q -o ONEPAGE.ps -s/usr/share/gEDA/scheme/print.scm $$S; \
 	cat ONEPAGE.ps; done > $(PROJNAME).ps
 	rm -f ONEPAGE.ps
 
