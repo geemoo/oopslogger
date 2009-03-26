@@ -1,2 +1,10 @@
 *~
 *.log
+*-
+\#*\#
+*.new.pcb
+*.pcb.bak*
+*.cmd
+*.net
+*.xy
+drc.txt
