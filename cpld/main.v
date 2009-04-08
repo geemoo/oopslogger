@@ -2,10 +2,10 @@
 
 module main(
 	clk, 
-	sclk, csn, miso, mosi,
-	oen, wen, cen, 
-	addr, 
-	data
+	sclk, csn, miso, mosi
+	//oen, wen, cen, 
+	//addr, 
+	//data
 );
 
 	/*******************************************************************
@@ -17,25 +17,31 @@ module main(
 	output miso; 
 	input mosi;
 
-	output oen;
-	output wen;
-	output cen;
+	//output oen;
+	//output wen;
+	//output cen;
 
-	output [16:0] addr;
+	//output [16:0] addr;
 
-	inout [7:0] data;
+	//inout [7:0] data;
+
+	/*******************************************************************
+	* SPI handling block  */
+
+	// shift register for spi bits
+	reg [27:0] spi_buffer;
+
+	always @ (posedge sclk) begin
 
 
-	always @ (posedge clk) begin
 
 
 	end
 
-	assign addr = 0;
-	assign data = 0;
-	assign oen = 0;
-	assign wen = 0;
-	assign cen = 0;
-	assign miso = 0;
+	// SPI lines go line during csn high
+	assign miso = csn ? 1'bZ : miso_int;
 
 endmodule
+
+
+
