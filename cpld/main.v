@@ -29,14 +29,19 @@ module main(
 	* SPI handling block  */
 
 	// shift register for spi bits
-	reg [27:0] spi_buffer;
+	reg [27:0] spi_in_buffer;
 
-	always @ (posedge sclk) begin
+	// when cs is low, read the bits from mosi line
+	always @ (sclk) begin
 
-
-
+		// on rising edge of sclk, read off mosi
+		if (!csn && sclk) begin
+			spi_in_buffer <= { spi_in_buffer[26:0] , mosi };
+		end
 
 	end
+
+	
 
 	// SPI lines go line during csn high
 	assign miso = csn ? 1'bZ : miso_int;
