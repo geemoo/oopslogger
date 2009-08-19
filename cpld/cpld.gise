@@ -19,42 +19,8 @@
 
   <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema">
-    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
-    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="main.cmd_log"/>
-    <file xil_pn:fileType="FILE_LFP" xil_pn:name="main.lfp"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="main.lso"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="main.prj"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="main.syr"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="main.xst"/>
-    <file xil_pn:fileType="FILE_HTML" xil_pn:name="main_summary.html"/>
-    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="main_xst.xrpt"/>
-    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
-  </files>
+  <files xmlns="http://www.xilinx.com/XMLSchema"/>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1244947241" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1244947241">
-      <status xil_pn:value="SuccessfullyRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1244947241" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-7121685797798334288" xil_pn:start_ts="1244947241">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1244947252" xil_pn:in_ck="4384686985" xil_pn:name="TRANEXT_xstsynthesize_xbr" xil_pn:prop_ck="-6965717618151008999" xil_pn:start_ts="1244947241">
-      <status xil_pn:value="FailedRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
-      <outfile xil_pn:name="main.cmd_log"/>
-      <outfile xil_pn:name="main.lso"/>
-      <outfile xil_pn:name="main.prj"/>
-      <outfile xil_pn:name="main.syr"/>
-      <outfile xil_pn:name="main.xst"/>
-      <outfile xil_pn:name="main_summary.html"/>
-      <outfile xil_pn:name="main_xst.xrpt"/>
-      <outfile xil_pn:name="xst"/>
-    </transform>
-  </transforms>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
 
 </generated_project>

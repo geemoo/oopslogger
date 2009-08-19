@@ -1,7 +1,5 @@
 # clock lines
 Net "clk" IOSTANDARD=LVCMOS33 | LOC="1";
-Net "clk" TNM_NET=clk;
-TIMESPEC TS_clk=PERIOD clk 125000 ns HIGH 50%;
 
 # spi interface
 Net "sclk" IOSTANDARD=LVCMOS33 | LOC="12";
