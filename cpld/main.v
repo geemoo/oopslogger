@@ -25,20 +25,18 @@ module main(
 	inout [7:0] data;
 
 	// define registers for what needs to be a register
-	reg sclk_last;
 
 	reg [16:0] addr;
 	wire [7:0] data;
 	wire [7:0] data_in;
 	reg [7:0] data_out;
 	reg data_out_en;
-	reg ce;
-	reg oe;
-	reg we;
+	reg cen;
+	reg oen;
+	reg wen;
 
 	reg miso_int;
 	reg miso_active;
-	reg [5:0] delay;
 	reg cmd;
 
 	// params to make the commands easier to read
@@ -93,9 +91,9 @@ module main(
 	always @ (posedge(clk)) begin
 
 		if (csn) begin
-			ce <= 0;
-			we <= 0;
-			oe <= 0;
+			cen <= 0;
+			wen <= 0;
+			oen <= 0;
 			data_out <= 0;
 			data_out_en <= 0;
 			cur_state <= GET_CMD;
@@ -104,12 +102,16 @@ module main(
 		end else begin
 		
 			// if stuff is being clocked in, we're gonna need the ram soon.. power it up
-			ce <= 1;
+			cen <= 1;
 
 			// state machine to handle doing the reads and writes
 			case (cur_state)
 				// in this state, we wait until we're told to continue
 				GET_CMD: begin
+
+					// finish resetting the output enable from previous writes
+					data_out_en <= 0;
+
 					// once we get 1 bit in.. we can get the command
 					if (spi_count == 1) begin
 						// figure out if we are supposed to read or write
@@ -148,38 +150,26 @@ module main(
 
 				// now we have to put we high
 				DO_WRITE: begin
-					we <= 1;
-					delay <= 5;
+					wen <= 1;
 					cur_state <= WRITE_HOLD;
 				end
 		
 				// wait for the ram to output it's data
 				WRITE_HOLD: begin
-					if (delay) begin
-						delay <= delay - 1;
-					end else begin
-						we <= 0;
-						data_out <= 0;
-						data_out_en <= 0;
-						cur_state <= GET_CMD;
-					end
+					wen <= 0;
+					data_out <= 0;
+					cur_state <= GET_CMD;
 				end
 
 				// do the output enable for the ram
 				DO_READ: begin
-					oe <= 1;
-					delay <= 5;
+					oen <= 1;
 					cur_state <= READ_HOLD;
 				end
 
 				// wait for the data to come out
 				READ_HOLD: begin
-					if (delay) begin
-						delay <= delay - 1;
-					end else begin
-						spi_out_buffer <= data_in;
-						cur_state <= GET_CMD;
-					end
+					cur_state <= GET_CMD;
 				end
 
 				default: begin
@@ -194,10 +184,6 @@ module main(
 
 	// since data is an inout port, we'll assign it via the status of oe
 	assign data = data_out_en ? data_out : 8'bZ;
-	assign data_in = oe ? data : 8'bZ;
+	assign data_in = oen ? data : 8'bZ;
 
-	// assign inverts to the enable lines
-	assign cen = ~ce;
-	assign oen = ~oe;
-	assign wen = ~we;
 endmodule
