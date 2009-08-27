@@ -22,13 +22,18 @@
     <file xil_pn:name="pinouts.ucf" xil_pn:type="FILE_UCF">
       <association xil_pn:name="Implementation"/>
     </file>
-    <file xil_pn:name="unit_test1.v" xil_pn:type="FILE_VERILOG">
+    <file xil_pn:name="ut_read_01.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation"/>
+      <association xil_pn:name="PostRouteSimulation"/>
+    </file>
+    <file xil_pn:name="ut_write_01.v" xil_pn:type="FILE_VERILOG">
       <association xil_pn:name="BehavioralSimulation"/>
       <association xil_pn:name="PostRouteSimulation"/>
     </file>
   </files>
 
   <properties>
+    <property xil_pn:name="Auto Implementation Top" xil_pn:value="false"/>
     <property xil_pn:name="Constraints Entry" xil_pn:value="Constraints Editor"/>
     <property xil_pn:name="Device" xil_pn:value="xc2c64a"/>
     <property xil_pn:name="Device Family" xil_pn:value="CoolRunner2 CPLDs"/>
@@ -37,13 +42,13 @@
     <property xil_pn:name="Implementation Top Instance Path" xil_pn:value="/main"/>
     <property xil_pn:name="Optimization Effort" xil_pn:value="High"/>
     <property xil_pn:name="Optimization Goal" xil_pn:value="Area"/>
-    <property xil_pn:name="PROP_BehavioralSimTop" xil_pn:value="Module|unit_test1"/>
+    <property xil_pn:name="PROP_BehavioralSimTop" xil_pn:value="Module|ut_write_01"/>
     <property xil_pn:name="PROP_DesignName" xil_pn:value="cpld"/>
     <property xil_pn:name="PROP_DevFamilyPMName" xil_pn:value="xbr"/>
     <property xil_pn:name="Package" xil_pn:value="VQ44"/>
     <property xil_pn:name="Preferred Language" xil_pn:value="Verilog"/>
     <property xil_pn:name="Property Specification in Project File" xil_pn:value="Store non-default values only"/>
-    <property xil_pn:name="Selected Simulation Root Source Node Behavioral" xil_pn:value="Module|unit_test1"/>
+    <property xil_pn:name="Selected Simulation Root Source Node Behavioral" xil_pn:value="Module|ut_write_01"/>
     <property xil_pn:name="Selected Simulation Root Source Node Post-Route" xil_pn:value="Module|unit_test1"/>
     <property xil_pn:name="Selected Simulation Source Node" xil_pn:value="uut1"/>
     <property xil_pn:name="Simulation Run Time ISim" xil_pn:value="100 ns"/>
@@ -53,7 +58,9 @@
     <property xil_pn:name="Top-Level Source Type" xil_pn:value="HDL"/>
   </properties>
 
-  <bindings/>
+  <bindings>
+    <binding xil_pn:location="/main" xil_pn:name="pinouts.ucf"/>
+  </bindings>
 
   <libraries/>
 

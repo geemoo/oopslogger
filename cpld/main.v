@@ -28,9 +28,8 @@ module main(
 
 	reg [16:0] addr;
 	wire [7:0] data;
-	wire [7:0] data_in;
+	reg [7:0] data_in;
 	reg [7:0] data_out;
-	reg data_out_en;
 	reg cen;
 	reg oen;
 	reg wen;
@@ -66,19 +65,26 @@ module main(
 		if (csn) begin
 			spi_count <= 0;
 			miso_int <= 0;
-			miso_active <= 0;
 
 		// on the rising edge.. 
 		end else if (sclk) begin 
 			// shift in our data from the mcu
 			spi_in_buffer <= { spi_in_buffer[16:0] , mosi };
 
+			// see if our data is ready to read
+			if (spi_count == 23) begin
+				spi_out_buffer <= data_in;
+			end
+
 			// inc our counter so the other blocks know when to operate
 			spi_count <= spi_count + 1;
 
 		// on the falling edge..
 		end else begin
-			if (miso_active) begin
+			if (miso_active && (spi_count == 24) ) begin
+				miso_int <= data_in[7];
+				spi_out_buffer <= { data_in[6:0], 1'b0 };
+			end else if (miso_active) begin
 				miso_int <= spi_out_buffer[7];
 				spi_out_buffer <= spi_out_buffer << 1;
 			end
@@ -91,29 +97,29 @@ module main(
 	always @ (posedge(clk)) begin
 
 		if (csn) begin
-			cen <= 0;
-			wen <= 0;
-			oen <= 0;
+			cen <= 1;
+			wen <= 1;
+			oen <= 1;
 			data_out <= 0;
-			data_out_en <= 0;
 			cur_state <= GET_CMD;
 			addr <= 0;
+			miso_active <= 0;
 	
 		end else begin
 		
 			// if stuff is being clocked in, we're gonna need the ram soon.. power it up
-			cen <= 1;
+			cen <= 0;
 
 			// state machine to handle doing the reads and writes
 			case (cur_state)
 				// in this state, we wait until we're told to continue
 				GET_CMD: begin
 
-					// finish resetting the output enable from previous writes
-					data_out_en <= 0;
+					// once we get 2 bits in.. we can get the command
+					if (spi_count == 2) begin
 
-					// once we get 1 bit in.. we can get the command
-					if (spi_count == 1) begin
+						// 10 = read.  11 = write.  we only need to check bit #2
+
 						// figure out if we are supposed to read or write
 						cmd <= spi_in_buffer[0];
 
@@ -143,32 +149,33 @@ module main(
 					// once we get to 32 bits...
 					if (spi_count == 32) begin
 						data_out <= spi_in_buffer[7:0];
-						data_out_en <= 1;
 						cur_state <= DO_WRITE;
 					end
 				end
 
-				// now we have to put we high
+				// now we have to put wen low (active low)
 				DO_WRITE: begin
-					wen <= 1;
+					wen <= 0;
 					cur_state <= WRITE_HOLD;
 				end
 		
 				// wait for the ram to output it's data
 				WRITE_HOLD: begin
-					wen <= 0;
+					wen <= 1;
 					data_out <= 0;
 					cur_state <= GET_CMD;
 				end
 
 				// do the output enable for the ram
 				DO_READ: begin
-					oen <= 1;
+					oen <= 0;
 					cur_state <= READ_HOLD;
 				end
 
 				// wait for the data to come out
 				READ_HOLD: begin
+					oen <= 1;
+					miso_active <= 1;
 					cur_state <= GET_CMD;
 				end
 
@@ -179,11 +186,16 @@ module main(
 		end
 	end
 
+	// dump data into a register when wen goes low
+	always @ (oen, data) begin
+		if (!oen) 
+			data_in <= data;
+	end
+
+	// dump the data_out into the data pins
+	assign data = wen ? 8'bZ : data_out;
+
 	// SPI lines go line during csn high
 	assign miso = csn ? 1'bZ : miso_int;
-
-	// since data is an inout port, we'll assign it via the status of oe
-	assign data = data_out_en ? data_out : 8'bZ;
-	assign data_in = oen ? data : 8'bZ;
 
 endmodule
