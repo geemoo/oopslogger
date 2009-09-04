@@ -46,9 +46,11 @@ netname=5V
 C 40700 44100 1 0 0 connector-usb.sym
 {
 T 40700 45500 5 10 1 1 0 0 1
-refdes=J2
+refdes=J1
 T 39600 44900 5 10 0 0 0 0 1
 device=USBCONNECTOR
+T 40700 44100 5 10 0 1 0 0 1
+footprint=USB_TypeA_Male_SM
 }
 C 40000 34200 0 0 0 title-bordered-C.sym
 C 46200 35600 1 90 0 capacitor-1.sym
@@ -61,17 +63,21 @@ T 45900 36200 5 10 1 1 90 0 1
 value=0.1uF
 T 46200 35600 5 10 0 0 0 0 1
 footprint=0603
+T 46200 35600 5 10 0 1 0 0 1
+symversion=0.1
 }
 C 47700 35600 1 90 0 capacitor-1.sym
 {
 T 47000 35800 5 10 0 0 90 0 1
 device=CAPACITOR
 T 47400 35700 5 10 1 1 90 0 1
-refdes=C4
+refdes=C2
 T 47400 36200 5 10 1 1 90 0 1
 value=0.1uF
 T 47700 35600 5 10 0 0 0 0 1
 footprint=0603
+T 47700 35600 5 10 0 1 0 0 1
+symversion=0.1
 }
 N 46000 36500 46000 36800 4
 N 47500 36500 47500 36800 4
@@ -94,7 +100,7 @@ C 41900 41100 1 90 0 capacitor-1.sym
 T 41200 41300 5 10 0 0 90 0 1
 device=CAPACITOR
 T 41600 41100 5 10 1 1 90 0 1
-refdes=C7
+refdes=C3
 T 41000 41300 5 10 0 0 90 0 1
 symversion=0.1
 T 41600 41700 5 10 1 1 90 0 1
@@ -107,7 +113,7 @@ C 43000 41100 1 90 0 capacitor-1.sym
 T 42300 41300 5 10 0 0 90 0 1
 device=CAPACITOR
 T 42700 41100 5 10 1 1 90 0 1
-refdes=C8
+refdes=C4
 T 42100 41300 5 10 0 0 90 0 1
 symversion=0.1
 T 42700 41700 5 10 1 1 90 0 1
@@ -150,7 +156,7 @@ N 45100 48900 45100 49500 4
 C 43600 41900 1 0 0 at90usb162.sym
 {
 T 44000 48600 5 10 1 1 0 0 1
-refdes=U3
+refdes=U1
 T 44000 49300 5 10 0 0 0 0 1
 device=AT90USB162
 T 44000 49500 5 10 0 0 0 0 1
@@ -171,7 +177,7 @@ C 46500 49100 1 0 0 resistor-1.sym
 T 46800 49500 5 10 0 0 0 0 1
 device=RESISTOR
 T 46400 49300 5 8 1 1 0 1 1
-refdes=R4
+refdes=R3
 T 47300 49300 5 8 1 1 0 1 1
 value=4.7k
 T 46500 49100 5 10 0 0 0 0 1
@@ -183,7 +189,7 @@ C 47800 44700 1 0 0 resistor-1.sym
 T 48100 45100 5 10 0 0 0 0 1
 device=RESISTOR
 T 47700 44900 5 8 1 1 0 1 1
-refdes=R5
+refdes=R4
 T 48600 44900 5 8 1 1 0 1 1
 value=750
 T 47800 44700 5 10 0 0 0 0 1
@@ -192,7 +198,7 @@ footprint=0402
 C 49200 43900 1 270 0 led-2.sym
 {
 T 49200 43200 5 8 1 1 90 7 1
-refdes=D2
+refdes=D1
 T 49800 43800 5 10 0 0 90 8 1
 device=LED
 T 49200 43900 5 10 0 0 180 2 1
@@ -207,7 +213,7 @@ C 47800 44400 1 0 0 resistor-1.sym
 T 48100 44800 5 10 0 0 0 0 1
 device=RESISTOR
 T 47700 44600 5 8 1 1 0 1 1
-refdes=R6
+refdes=R5
 T 48600 44600 5 8 1 1 0 1 1
 value=750
 T 47800 44400 5 10 0 0 0 0 1
@@ -216,7 +222,7 @@ footprint=0402
 C 48800 43900 1 270 0 led-2.sym
 {
 T 48800 43000 5 8 1 1 90 1 1
-refdes=D3
+refdes=D2
 T 49400 43800 5 10 0 0 270 0 1
 device=LED
 T 48800 43900 5 10 0 0 0 6 1
@@ -237,11 +243,13 @@ C 49200 35600 1 90 0 capacitor-1.sym
 T 48500 35800 5 10 0 0 90 0 1
 device=CAPACITOR
 T 48900 35600 5 10 1 1 90 0 1
-refdes=C13
+refdes=C5
 T 48900 36200 5 10 1 1 90 0 1
 value=0.1uF
 T 49200 35600 5 10 0 0 0 0 1
 footprint=0603
+T 49200 35600 5 10 0 1 0 0 1
+symversion=0.1
 }
 N 49000 36500 49000 36800 4
 N 49000 35300 49000 35600 4
@@ -263,11 +271,13 @@ C 44700 35600 1 90 0 capacitor-1.sym
 T 44000 35800 5 10 0 0 90 0 1
 device=CAPACITOR
 T 44400 35600 5 10 1 1 90 0 1
-refdes=C15
+refdes=C6
 T 44400 36200 5 10 1 1 90 0 1
 value=0.1uF
 T 44700 35600 5 10 0 0 0 0 1
 footprint=0603
+T 44700 35600 5 10 0 1 0 0 1
+symversion=0.1
 }
 C 44400 35000 1 0 0 gnd-1.sym
 N 44500 35600 44500 35300 4
@@ -279,11 +289,13 @@ C 43200 35600 1 90 0 capacitor-1.sym
 T 42500 35800 5 10 0 0 90 0 1
 device=CAPACITOR
 T 42900 35600 5 10 1 1 90 0 1
-refdes=C16
+refdes=C7
 T 42900 36200 5 10 1 1 90 0 1
 value=1uF
 T 43200 35600 5 10 0 0 0 0 1
 footprint=0603
+T 43200 35600 5 10 0 1 0 0 1
+symversion=0.1
 }
 C 42800 36800 1 0 0 generic-supply-1.sym
 {
@@ -301,11 +313,13 @@ C 41900 42400 1 0 0 crystal-2pin.sym
 T 42100 42900 5 10 0 0 0 0 1
 device=CRYSTAL
 T 41900 42700 5 10 1 1 0 0 1
-refdes=U6
+refdes=U2
 T 42100 43100 5 10 0 0 0 0 1
 symversion=0.1
 T 42000 42200 5 10 1 1 0 0 1
 value=16MHz
+T 41900 42400 5 10 0 1 0 0 1
+footprint=NX3225SA
 }
 T 48800 37300 9 10 1 0 0 0 1
 Flash
@@ -348,7 +362,7 @@ C 57500 46500 1 0 0 23k256.sym
 T 57800 49700 5 10 0 0 0 0 1
 device=23k256
 T 57800 48500 5 10 1 1 0 0 1
-refdes=U?
+refdes=U3
 T 57800 50100 5 10 0 0 0 0 1
 footprint=TSSOP8
 }
@@ -357,7 +371,7 @@ C 57400 48800 1 0 0 resistor-1.sym
 T 57700 49200 5 10 0 0 0 0 1
 device=RESISTOR
 T 57300 49000 5 8 1 1 0 1 1
-refdes=R?
+refdes=R6
 T 58200 49000 5 8 1 1 0 1 1
 value=4.7k
 T 57400 48800 5 10 0 0 0 0 1
@@ -373,7 +387,7 @@ C 57400 44100 1 0 0 resistor-1.sym
 T 57700 44500 5 10 0 0 0 0 1
 device=RESISTOR
 T 57300 44300 5 8 1 1 0 1 1
-refdes=R?
+refdes=R7
 T 58200 44300 5 8 1 1 0 1 1
 value=4.7k
 T 57400 44100 5 10 0 0 0 0 1
@@ -389,7 +403,7 @@ C 57500 41800 1 0 0 23k256.sym
 T 57800 45000 5 10 0 0 0 0 1
 device=23k256
 T 57800 43800 5 10 1 1 0 0 1
-refdes=U?
+refdes=U4
 T 57800 45400 5 10 0 0 0 0 1
 footprint=TSSOP8
 }
@@ -466,7 +480,7 @@ footprint=0402
 C 57400 36900 1 0 0 at25df041a.sym
 {
 T 57700 38900 5 10 1 1 0 0 1
-refdes=U4
+refdes=U5
 T 57700 39300 5 10 0 0 0 0 1
 device=AT25DF041A
 T 57700 39700 5 10 0 0 0 0 1
@@ -523,7 +537,7 @@ netname=3.3V
 C 48800 49900 1 270 0 isp6.sym
 {
 T 48800 50000 5 10 1 1 0 0 1
-refdes=J?
+refdes=J2
 T 51100 49900 5 10 0 0 270 0 1
 device=ISP_6PIN
 T 51700 49900 5 10 0 0 270 0 1
@@ -557,11 +571,13 @@ C 41700 35600 1 90 0 capacitor-1.sym
 T 41000 35800 5 10 0 0 90 0 1
 device=CAPACITOR
 T 41400 35600 5 10 1 1 90 0 1
-refdes=C15
+refdes=C8
 T 41400 36200 5 10 1 1 90 0 1
 value=10uF
 T 41700 35600 5 10 0 0 0 0 1
 footprint=0805
+T 41700 35600 5 10 0 1 0 0 1
+symversion=0.1
 }
 C 41400 35000 1 0 0 gnd-1.sym
 N 41500 35600 41500 35300 4
