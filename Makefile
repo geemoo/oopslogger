@@ -28,8 +28,8 @@ all:
 sch: $(PAGES)
 	gschem $(PAGES)
 
-# attrib: $(PAGES)
-#	gattrib $(PAGES)
+attrib: $(PAGES)
+	gattrib $(PAGES)
 
 renum: $(PAGES)
 	refdes_renum --force $(PAGES)
